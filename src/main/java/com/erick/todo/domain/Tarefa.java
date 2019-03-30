@@ -54,12 +54,20 @@ public class Tarefa implements Serializable{
 		this.nome = nome;
 	}
 
-	public String getchecagem() {
+	public String getChecagem() {
 		return checagem;
 	}
 
-	public void setchecagem(String checagem) {
+	public void setChecagem(String checagem) {
 		this.checagem = checagem;
+	}
+
+	public Projeto getProjeto() {
+		return projeto;
+	}
+
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
 	}
 
 	@Override

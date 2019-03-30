@@ -64,6 +64,22 @@ public class Projeto implements Serializable{
 		return descricao;
 	}
 
+	public List<Tarefa> getTarefas() {
+		return tarefas;
+	}
+
+	public void setTarefas(List<Tarefa> tarefas) {
+		this.tarefas = tarefas;
+	}
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
