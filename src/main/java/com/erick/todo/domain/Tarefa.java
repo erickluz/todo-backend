@@ -9,30 +9,33 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Tarefa implements Serializable{
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String nome;
+	private String checagem;
 	
-	private String check;
-	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="projeto_id")
 	private Projeto projeto;
+
 	
 	public Tarefa() {
 		
 	}
-	
-	public Tarefa(Integer id, String nome, String check) {
+
+	public Tarefa(Integer id, String nome, String checagem) {
+		super();
 		this.id = id;
 		this.nome = nome;
-		this.check = check;
+		this.checagem = checagem;
 	}
 
 	public Integer getId() {
@@ -51,24 +54,12 @@ public class Tarefa implements Serializable{
 		this.nome = nome;
 	}
 
-	public String isCheck() {
-		return check;
+	public String getchecagem() {
+		return checagem;
 	}
 
-	public void setCheck(String check) {
-		this.check = check;
-	}
-
-	public Projeto getProjeto() {
-		return projeto;
-	}
-
-	public void setProjeto(Projeto projeto) {
-		this.projeto = projeto;
-	}
-
-	public String getCheck() {
-		return check;
+	public void setchecagem(String checagem) {
+		this.checagem = checagem;
 	}
 
 	@Override

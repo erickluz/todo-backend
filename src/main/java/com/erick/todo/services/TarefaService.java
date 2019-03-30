@@ -10,11 +10,11 @@ import com.erick.todo.repositories.TarefaRepository;
 
 @Service
 public class TarefaService {
-
+	
 	@Autowired
 	private TarefaRepository repo;
 	
-	public List<Tarefa> getTarefas(){
+	public List<Tarefa> listarTarefas(){
 		return repo.findAll();
 	}
 	

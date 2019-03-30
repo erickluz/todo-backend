@@ -10,11 +10,11 @@ import com.erick.todo.repositories.ProjetoRepository;
 
 @Service
 public class ProjetoService {
-
+	
 	@Autowired
 	private ProjetoRepository repo;
 	
-	public List<Projeto> getProjetos(){
+	public List<Projeto> listarProjetos(){
 		return repo.findAll();
 	}
 	

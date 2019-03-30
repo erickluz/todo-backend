@@ -12,16 +12,16 @@ import com.erick.todo.domain.Projeto;
 import com.erick.todo.services.ProjetoService;
 
 @RestController
-@RequestMapping(value="/projetos")
+@RequestMapping("/projetos")
 public class ProjetoResource {
 
 	@Autowired
 	private ProjetoService projetoService;
 	
-	@GetMapping(value="/")
-	public ResponseEntity<List<Projeto>> projetos() {
-		List<Projeto> projetos = projetoService.getProjetos();
-		return ResponseEntity.ok().body(projetos);		
+	@GetMapping("/")
+	public ResponseEntity<List<Projeto>> listarProjetos(){
+		List<Projeto> projetos = projetoService.listarProjetos();
+		return ResponseEntity.ok().body(projetos);
 	}
 	
 }
